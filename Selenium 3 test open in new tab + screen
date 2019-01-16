@@ -1,0 +1,25 @@
+from selenium import webdriver
+
+driver=webdriver.Chrome("/Users/user/PycharmProjects/Selenium/Selenium-/Drivers/chromedriver")
+driver.set_page_load_timeout(30)
+driver.get("http://www.stermedia.eu")
+driver.maximize_window()
+driver.implicitly_wait(20)
+driver.save_screenshot("stermedia.png")
+
+
+
+driver.execute_script("window.open('http://www.stermedia.eu/contact/', 'new window')")
+driver.save_screenshot("stermediacontact.png")
+
+driver.maximize_window()
+driver.implicitly_wait(30)
+
+
+
+
+driver.execute_script("window.open('http://www.stermedia.eu/blog/', 'new window')")
+driver.save_screenshot("stermediablog.png")
+driver.implicitly_wait(50)
+
+driver.quit()
